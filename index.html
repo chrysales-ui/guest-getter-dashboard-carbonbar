@@ -125,6 +125,60 @@
 
   .spacer { height: 40px; }
   .footer { border-top: 1px solid var(--border); padding: 20px 48px; display: flex; justify-content: space-between; font-size: 11px; color: var(--text-dim); }
+
+  /* TABLE SCROLL WRAPPER */
+  .tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 640px) {
+    .header { padding: 16px 20px; flex-wrap: wrap; gap: 10px; }
+    .header-brand { font-size: 17px; }
+    .header-badge { font-size: 10px; padding: 3px 10px; }
+    .container { padding: 28px 16px 60px; }
+    .headline-grid { grid-template-columns: 1fr; gap: 2px; }
+    .headline-card:first-child { border-radius: 12px 12px 0 0; }
+    .headline-card:last-child  { border-radius: 0 0 12px 12px; }
+    .headline-card { padding: 20px; }
+    .card-value { font-size: 26px; }
+    .channel-grid { grid-template-columns: 1fr; }
+    .metric-pair { grid-template-columns: 1fr; gap: 8px; }
+    .m-arrow { display: none; }
+    .m-val { font-size: 22px; }
+    .meta-4 { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .meta-box { padding: 10px 12px; }
+    .meta-box-val { font-size: 17px; }
+    .cpl-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .cpl-badge { margin-left: 0; width: 100%; }
+    .cpl-arrow { transform: rotate(90deg); }
+    .gsc-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
+    .gsc-card:first-child  { border-radius: 10px 0 0 0; }
+    .gsc-card:nth-child(2) { border-radius: 0 10px 0 0; }
+    .gsc-card:nth-child(3) { border-radius: 0 0 0 10px; }
+    .gsc-card:last-child   { border-radius: 0 0 10px 0; }
+    .next-grid { grid-template-columns: 1fr; }
+    .tbl, .cmp-tbl { font-size: 11.5px; }
+    .tbl th, .tbl td, .cmp-tbl th, .cmp-tbl td { padding: 7px 8px; }
+    .footer { padding: 16px 20px; flex-direction: column; gap: 4px; }
+    .stats-row { gap: 6px; }
+    .pill { font-size: 11px; padding: 5px 9px; }
+    .card { padding: 16px; }
+  }
+
+  /* ── TABLET ── */
+  @media (min-width: 641px) and (max-width: 900px) {
+    .header { padding: 18px 28px; }
+    .container { padding: 36px 28px 64px; }
+    .headline-grid { grid-template-columns: 1fr 1fr; }
+    .headline-card:first-child { border-radius: 12px 0 0 0; }
+    .headline-card:nth-child(2) { border-radius: 0 12px 0 0; }
+    .headline-card:last-child { grid-column: 1 / -1; border-radius: 0 0 12px 12px; }
+    .gsc-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
+    .gsc-card:first-child  { border-radius: 10px 0 0 0; }
+    .gsc-card:nth-child(2) { border-radius: 0 10px 0 0; }
+    .gsc-card:nth-child(3) { border-radius: 0 0 0 10px; }
+    .gsc-card:last-child   { border-radius: 0 0 10px 0; }
+    .footer { padding: 18px 28px; }
+  }
 </style>
 </head>
 <body>
@@ -201,7 +255,7 @@
         <div class="card-name">Google Signals</div>
         <div style="font-size:11px;color:var(--text-dim)">Not included in cost/res.</div>
       </div>
-      <table class="tbl">
+      <div class="tbl-wrap"><table class="tbl">
         <thead><tr><th>Signal</th><th>Mar 13–26</th><th>Prev</th><th>Change</th></tr></thead>
         <tbody>
           <tr><td>Phone calls (ads)</td><td class="mono">24</td><td class="mono">16</td><td class="mono g">+8</td></tr>
@@ -210,7 +264,7 @@
           <tr><td>Store visits (est.)</td><td class="mono">~1,105</td><td class="mono">~963</td><td class="mono g">+142</td></tr>
           <tr><td>Group booking visits</td><td class="mono">58</td><td class="mono">93</td><td class="mono r">–35</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <div class="caveat" style="margin-top:12px;"><strong>Note:</strong> All 4 campaigns are budget-limited — impressions and clicks are being left on the table.</div>
     </div>
   </div>
@@ -218,7 +272,7 @@
   <!-- CAMPAIGN BREAKDOWN -->
   <div class="card" style="margin-bottom:40px;">
     <div style="font-size:10px;color:var(--text-sec);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">Campaign Breakdown · Conversions by Conv. Time</div>
-    <table class="tbl">
+    <div class="tbl-wrap"><table class="tbl">
       <thead><tr><th>Campaign</th><th>Type</th><th>Budget/day</th><th>OT Reservations</th><th>Notes</th></tr></thead>
       <tbody>
         <tr><td>GG | PMAX – Reservations</td><td>Performance Max</td><td class="mono">$35.25</td><td class="mono">36.5</td><td>Primary driver</td></tr>
@@ -227,7 +281,7 @@
         <tr><td>GG | Search – Private Events</td><td>Search</td><td class="mono">$10.13</td><td class="mono">0</td><td>Group bookings</td></tr>
         <tr><td><strong>Total</strong></td><td></td><td class="mono"><strong>$75.69</strong></td><td class="mono"><strong>48</strong></td><td></td></tr>
       </tbody>
-    </table>
+    </table></div>
     <div class="note">Source: Google Ads Manager · Conversions by conv. time · $844 ÷ 48 = $17.58/reservation · All campaigns Eligible (Limited) by budget</div>
   </div>
 
@@ -238,7 +292,7 @@
       <div class="card-name">Meta Ads</div>
       <div class="spend-badge">$1,222 CAD</div>
     </div>
-    <table class="tbl" style="margin-bottom:20px;">
+    <div class="tbl-wrap"><table class="tbl" style="margin-bottom:20px;">
       <thead><tr><th>Campaign</th><th>Status</th><th>Leads</th><th>Spend (CAD)</th><th>CPL</th></tr></thead>
       <tbody>
         <tr><td>[Lead] Discover The Carbon Bar</td><td>Active</td><td class="mono">227</td><td class="mono">$418.92</td><td class="mono g">$1.85</td></tr>
@@ -247,7 +301,7 @@
         <tr><td>[Awareness] Happy Hour</td><td>Active</td><td class="mono">—</td><td class="mono">$137.88</td><td class="mono">—</td></tr>
         <tr><td><strong>Total</strong></td><td></td><td class="mono"><strong>347</strong></td><td class="mono"><strong>$1,222</strong></td><td></td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div style="font-size:10px;color:var(--text-sec);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">Reservations Created After Lead Form · All 347 Leads Cross-Matched</div>
     <div class="meta-4">
@@ -315,7 +369,7 @@
 
   <!-- ZOOMING OUT -->
   <div class="section-title">Zooming Out · Period-over-Period</div>
-  <table class="cmp-tbl">
+  <div class="tbl-wrap"><table class="cmp-tbl">
     <thead>
       <tr><th>Metric</th><th style="text-align:right">Feb 27–Mar 12</th><th style="text-align:right">Mar 13–26</th><th style="text-align:right">Change</th></tr>
     </thead>
@@ -331,7 +385,7 @@
       <tr><td>Avg per-cover spend (Experience res.)</td><td class="mono">n/a</td><td class="mono">$72.71</td><td class="mono">—</td></tr>
       <tr><td>Avg spend per reservation (Experience res.)</td><td class="mono">n/a</td><td class="mono">$217.26</td><td class="mono">—</td></tr>
     </tbody>
-  </table>
+  </table></div>
   <div class="note" style="margin-bottom:40px;">* Prev spend per res. = $72.71/cover × 3.04 avg party size (Feb 27–Mar 12). † Prev Meta spend reflects all campaigns active in that window.</div>
 
   <!-- SEO -->
